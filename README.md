@@ -1,5 +1,4 @@
-# Vietnamese-Text-Classification
-Vietnamese Text Classification using Random Forest, K Nearest Neighbors, Logistic Regression, Support Vector Machine
+
 
 ## 1. Dataset
 - This repo uses VNTC Dataset with 10 Topics: https://github.com/duyvuleo/VNTC
@@ -10,7 +9,7 @@ Vietnamese Text Classification using Random Forest, K Nearest Neighbors, Logisti
 ./mkdir.sh
 ```
 
-- Preprocess data
+- Tiền xử lý data
 ```
 python preProcessData.py
 ```
@@ -20,7 +19,7 @@ python preProcessData.py
 python main.py -m <model name>
 ```
 
-- Predict with pretrained model and a text file
+- Dự đoán với mô hình được đào tạo trước và một tệp văn bản
 ```
 python predict.py -i <filename document> -m <model name>
 ```
