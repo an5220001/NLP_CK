@@ -1,10 +1,10 @@
 
 
 ## 1. Dataset
-- This repo uses VNTC Dataset with 10 Topics: https://github.com/duyvuleo/VNTC
+- Đề tài này sử dụng Bộ dữ liệu VNTC với 10 chủ đề: https://github.com/duyvuleo/VNTC
 
 ## 2. Run
-- Tạo folder dataset and features:
+- Tạo folder dataset và features:
 ```
 ./mkdir.sh
 ```
@@ -16,7 +16,7 @@ python preProcessData.py
 
 - Training
 ```
-python main.py -m <model name>
+python main.py -m svm
 ```
 
 - Dự đoán với mô hình được đào tạo trước và một tệp văn bản
