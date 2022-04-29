@@ -38,17 +38,11 @@ if __name__ == '__main__':
     #  Read input data
     data = args.filename.read()
 
-    if args.model == 'knn':
-        classifier = pickle.load(open('trained_model/knn_model_tfidf.pk', 'rb'))
-
     if args.model == 'svm':
         classifier = pickle.load(open('trained_model/svm_model.pk', 'rb'))
 
-    if args.model == 'randomforest':
-        classifier = pickle.load(open('trained_model/random_forest_model.pk', 'rb'))
-
-    if args.model == 'logistic':
-        classifier = pickle.load(open('trained_model/logistic_model.pk', 'rb'))
+    if args.model == 'knn':
+        classifier = pickle.load(open('trained_model/knn_model_tfidf.pk', 'rb'))
 
     vectorizer = pickle.load(open(settings.VECTOR_EMBEDDING,'rb'))
     data_features = []
