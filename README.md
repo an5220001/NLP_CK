@@ -21,5 +21,5 @@ python main.py -m <model name>
 
 - Dự đoán với mô hình được đào tạo trước và một tệp văn bản
 ```
-python predict.py -i <filename document> -m <model name>
+python predict.py -i <filename document> -m svm
 ```
