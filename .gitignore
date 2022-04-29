@@ -1,0 +1,4 @@
+feature_extraction/
+processes_data/
+trained_model/
+vector_embedding/
