@@ -96,7 +96,16 @@ if __name__ == '__main__':
     features_test, labels_test = FeatureExtraction(data=features_test_loader).read_feature()
     print('Read Feature Extraction Done! ', str(datetime.now()))
 
-    if args.model == 'knn':
+
+    if args.model == 'svm':
+        # SVM Classifier 
+        print('Training by SVM Classifier ...')
+        estSVM = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator= LinearSVC(penalty='l2', C= 4)
+        estSVM.training()
+        estSVM.save_model(filePath='trained_model/svm_model.pk') # save Model
+        print('Training by SVM Classifier Done !')
+
+    elif args.model == 'knn':
         # KNeighbors Classifier
         print('Training by KNeighbors Classifier ...')
         estKNeighbors = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator=KNeighborsClassifier(n_neighbors=3, n_jobs=4))
@@ -104,26 +113,4 @@ if __name__ == '__main__':
         estKNeighbors.save_model(filePath='trained_model/knn_model_tfidf.pk') # save Model
         print('Training by KNeighbors Classifier Done !')
 
-    elif args.model == 'svm':
-        # SVM Classifier 
-        print('Training by SVM Classifier ...')
-        estSVM = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator= LinearSVC(penalty='l2', C= 4, n_jobs=4))
-        estSVM.training()
-        estSVM.save_model(filePath='trained_model/svm_model.pk') # save Model
-        print('Training by SVM Classifier Done !')
-
-    elif args.model == 'randomforest':
-        # RandomForest Classifier
-        print('Training by RandomForest Classifier ...')
-        estRandomForest = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test,estimator=RandomForestClassifier(n_jobs=4))
-        estRandomForest.training()
-        estRandomForest.save_model(filePath='trained_model/random_forest_model.pk') # save Model
-        print('Training by RandomForest Classifier Done!')
-
-    elif args.model == 'logistic':
-        # Logistic_Classifier        
-        print('Training by Logistic_Classifier ...')
-        estLogistic = Classifier(features_train=features_train, features_test=features_test, labels_train=labels_train, labels_test=labels_test, estimator=LogisticRegression(penalty='l2', max_iter=20, C=30, n_jobs=4))
-        estLogistic.training()
-        estLogistic.save_model(filePath='trained_model/logistic_model.pk') # save Model
-        print('Training by Logistic_Classifier Done !')
+ 
