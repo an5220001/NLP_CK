@@ -57,7 +57,7 @@ class FileReader(object):
         return s
 
     def read_stopwords(self):
-        with open(self.filePath, 'r') as f:
+        with open(self.filePath, 'r', encoding="utf8") as f:
             stopwords = set([w.strip().replace(' ', '_') for w in f.readlines()])
         return stopwords
 
